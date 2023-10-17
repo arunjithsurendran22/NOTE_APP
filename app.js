@@ -15,8 +15,14 @@ app.set("view engine", "ejs");
 
 //Routes
 app.use("/", require("./server/routes/index"));
-app.use('/dashboard',require('./server/routes/dashboard'))
+app.use('/dashboard',require('./server/routes/index'))
 //handle 404
+
+
+
+
+
+
 app.get('*',(req,res)=>{
     res.status(404).send('404 page not found')
 })

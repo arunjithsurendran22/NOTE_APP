@@ -4,8 +4,23 @@ exports.homepage = async (req, res) => {
     title: "Node Js Notes",
     decription: "Free NodeJs App",
   };
-  res.render("index", {locals,layout:'../views/layouts/front-page'});
+  res.render("index", {
+    locals,
+    layout: "../views/layouts/front-page",
+  });
 };
+//GET DASHBOARD
+exports.dashboard = async (req, res) => {
+  const locals = {
+    title: "dashboard",
+    decription: "Free NodeJs App",
+  };
+  res.render("dashboard_index", {
+    locals,
+    layout: "../views/layouts/dashboard",
+  });
+};
+
 
 //GET ABOUT PAGE
 exports.aboutpage = async (req, res) => {
@@ -15,11 +30,4 @@ exports.aboutpage = async (req, res) => {
   };
   res.render("about", locals);
 };
-//GET DASH BOARD
-exports.dashboard = async (req, res) => {
-  const locals = {
-    title: "Dash board",
-    decription: "Free NodeJs App",
-  };
-  res.render("dashboard/index", {locals,layout:'../views/layouts/dashboard'});
-};
+
