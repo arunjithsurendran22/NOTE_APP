@@ -4,7 +4,7 @@ exports.homepage = async (req, res) => {
     title: "Node Js Notes",
     decription: "Free NodeJs App",
   };
-  res.render("index", locals);
+  res.render("index", {locals,layout:'../views/layouts/front-page'});
 };
 
 //GET ABOUT PAGE
@@ -14,4 +14,12 @@ exports.aboutpage = async (req, res) => {
     description: "Free Nodejs App",
   };
   res.render("about", locals);
+};
+//GET DASH BOARD
+exports.dashboard = async (req, res) => {
+  const locals = {
+    title: "Dash board",
+    decription: "Free NodeJs App",
+  };
+  res.render("dashboard/index", {locals,layout:'../views/layouts/dashboard'});
 };
